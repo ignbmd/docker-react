@@ -9,14 +9,14 @@ script:
   - docker run ignbmd/docker-react npm run test -- --coverage
 
 deploy:
-  provider: elasticbeanstalk
+  provider: "elasticbeanstalk"
   region: "ap-southeast-1"
   app: "react-docker"
   env: "Reactdocker-env"
   bucket_name: "elasticbeanstalk-ap-southeast-1-123519043694"
   bucket_path: "react-docker"
   on:
-    branch: master
-  access_key_id: $AWS_ACCESS_KEY
+    branch: "master"
+  access_key_id: "$AWS_ACCESS_KEY"
   secret_access_key:
     secure: "$AWS_SECRET_KEY"
